@@ -1,10 +1,14 @@
 package ro.upt.ac.chiuitter
 
 import android.app.Activity
+import android.content.Context
 import android.content.Intent
 import android.os.Bundle
+import android.widget.EditText
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import kotlinx.android.synthetic.main.view_home.*
+import ro.upt.ac.chiuitter.ComposeActivity.Companion.EXTRA_TEXT
 
 class HomeActivity : AppCompatActivity() {
 
@@ -46,7 +50,7 @@ class HomeActivity : AppCompatActivity() {
         // TODO 3: Start a new activity with the previously defined intent.
         // We start a new activity that we expect to return the acquired text as the result.
 
-        startActivity(composeActivityIntent);
+        startActivityForResult(composeActivityIntent, COMPOSE_REQUEST_CODE)
     }
 
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
@@ -60,9 +64,16 @@ class HomeActivity : AppCompatActivity() {
         data?.let {
             // TODO 5: Extract the text from result intent.
 
+            val extractedText = data.getStringExtra(EXTRA_TEXT);
 
             // TODO 6: Check if text is not null or empty, then set the new "chiuit" content.
 
+
+            if(extractedText.isNullOrEmpty()){
+                Toast.makeText(this, "The text is null or empty, please try again !", Toast.LENGTH_SHORT).show();
+            }else{
+                txv_content.text = extractedText;
+            }
 
         }
     }
