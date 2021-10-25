@@ -25,12 +25,21 @@ class HomeActivity : AppCompatActivity() {
         ibt_share.setOnClickListener { shareChiuit(txv_content.text.toString()) }
         fab_add.setOnClickListener { composeChiuit() }
 
+        initList();
+
     }
 
     private fun initList() {
         val chiuitList = dummyChiuitStore.getAllData()
 
         TODO("7. Instantiate the adapter, then setup the recycler view list")
+
+        listAdapter = ChiuitRecyclerViewAdapter(chiuitList.toMutableList()){
+            shareChiuit(it.description);
+        }
+
+        rv_chiuit_list.adapter = listAdapter;
+        rv_chiuit_list.layoutManager = LinearLayoutManager(this);
     }
 
     /*
