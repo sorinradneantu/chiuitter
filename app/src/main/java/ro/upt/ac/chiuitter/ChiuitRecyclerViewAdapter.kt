@@ -1,5 +1,6 @@
 package ro.upt.ac.chiuitter
 
+import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
@@ -12,6 +13,10 @@ class ChiuitRecyclerViewAdapter(
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ChiuitViewHolder {
         TODO("8. Inflate the item layout and return the view holder")
+
+        val newView = LayoutInflater.from(parent.context).inflate(R.layout.item_chiuit, parent, false)
+        return ChiuitViewHolder(newView);
+
     }
 
     override fun getItemCount(): Int {

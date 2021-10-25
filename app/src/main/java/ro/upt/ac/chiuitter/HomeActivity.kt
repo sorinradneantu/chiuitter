@@ -7,6 +7,7 @@ import android.os.Bundle
 import android.widget.EditText
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import kotlinx.android.synthetic.main.item_chiuit.*
 import kotlinx.android.synthetic.main.view_home.*
 import ro.upt.ac.chiuitter.ComposeActivity.Companion.EXTRA_TEXT
 
