@@ -19,6 +19,7 @@ class HomeActivity : AppCompatActivity() {
 
         ibt_share.setOnClickListener { shareChiuit(txv_content.text.toString()) }
         fab_add.setOnClickListener { composeChiuit() }
+
     }
 
     /*

@@ -1,5 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="..\:/Anul4_CTI_RO/Anul4_Sem1_CTI-RO/CTI_SMA_Anul4_Sem1/chiuitter/app/src/main/res/layout/item_chiuit.xml" value="0.13020833333333334" />
+        <entry key="..\:/Anul4_CTI_RO/Anul4_Sem1_CTI-RO/CTI_SMA_Anul4_Sem1/chiuitter/app/src/main/res/layout/view_compose.xml" value="0.13020833333333334" />
+        <entry key="..\:/Anul4_CTI_RO/Anul4_Sem1_CTI-RO/CTI_SMA_Anul4_Sem1/chiuitter/app/src/main/res/layout/view_home.xml" value="0.13020833333333334" />
+      </map>
+    </option>
+  </component>
   <component name="NullableNotNullManager">
     <option name="myDefaultNullable" value="android.support.annotation.Nullable" />
     <option name="myDefaultNotNull" value="android.support.annotation.NonNull" />
