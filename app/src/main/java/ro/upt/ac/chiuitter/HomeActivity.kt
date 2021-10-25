@@ -7,11 +7,16 @@ import android.os.Bundle
 import android.widget.EditText
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import androidx.recyclerview.widget.LinearLayoutManager
 import kotlinx.android.synthetic.main.item_chiuit.*
 import kotlinx.android.synthetic.main.view_home.*
 import ro.upt.ac.chiuitter.ComposeActivity.Companion.EXTRA_TEXT
 
 class HomeActivity : AppCompatActivity() {
+
+    private val dummyChiuitStore = DummyChiuitStore()
+
+    private lateinit var listAdapter: ChiuitRecyclerViewAdapter
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -20,6 +25,12 @@ class HomeActivity : AppCompatActivity() {
         ibt_share.setOnClickListener { shareChiuit(txv_content.text.toString()) }
         fab_add.setOnClickListener { composeChiuit() }
 
+    }
+
+    private fun initList() {
+        val chiuitList = dummyChiuitStore.getAllData()
+
+        TODO("7. Instantiate the adapter, then setup the recycler view list")
     }
 
     /*
