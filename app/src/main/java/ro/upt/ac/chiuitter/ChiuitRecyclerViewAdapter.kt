@@ -21,6 +21,12 @@ class ChiuitRecyclerViewAdapter(
 
     override fun getItemCount(): Int {
         TODO("9. Return the size of samples")
+
+        val itemCount : Int;
+        itemCount = chiuitList.size;
+
+        return itemCount;
+
     }
 
     override fun onBindViewHolder(holder: ChiuitViewHolder, position: Int) {
