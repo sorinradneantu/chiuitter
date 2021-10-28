@@ -1,6 +1,8 @@
 package ro.upt.ac.chiuitter.data.database
 
 import androidx.room.Dao
+import androidx.room.Delete
+import androidx.room.Insert
 import androidx.room.Query
 
 
@@ -13,8 +15,13 @@ interface ChiuitDao {
 
     // TODO("Define insert")
 
+    @Insert
+    fun insertChiuit(chiuit: ChiuitEntity)
 
     // TODO("Define delete")
+
+    @Delete
+    fun deleteChiuit(chiut: ChiuitEntity)
 
 
 }
