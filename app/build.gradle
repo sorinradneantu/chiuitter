@@ -24,13 +24,18 @@ android {
     }
 }
 
+configurations {
+    cleanedAnnotations
+    compile.exclude group: 'org.jetbrains' , module:'annotations'
+}
+
 dependencies {
-    implementation 'androidx.room:room-common:2.2.6'
+    annotationProcessor 'androidx.room:room-common:2.2.6'
+    //implementation 'androidx.room:room-compiler:2.3.0'
     def lifecycle_version = "2.0.0"
     def room_version = "1.1.1"
 
     implementation fileTree(dir: 'libs', include: ['*.jar'])
-    implementation"org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
 
     implementation 'androidx.appcompat:appcompat:1.0.0'
     implementation 'androidx.constraintlayout:constraintlayout:2.0.0-alpha2'
@@ -41,3 +46,4 @@ dependencies {
     implementation "android.arch.persistence.room:runtime:$room_version"
     kapt "android.arch.persistence.room:compiler:$room_version"
 }
+
