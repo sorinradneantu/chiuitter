@@ -25,15 +25,10 @@ class HomeActivity : AppCompatActivity() {
 
     private lateinit var viewModel: HomeViewModel
 
-    private val dummyChiuitStore = DummyChiuitStore()
-
-    private lateinit var listAdapter: ChiuitRecyclerViewAdapter
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.view_home)
 
-        ibt_share.setOnClickListener { shareChiuit(txv_content.text.toString()) }
         fab_add.setOnClickListener { composeChiuit() }
 
         val factory = HomeViewModelFactory(ChiuitDbStore(RoomDatabase.getDb(this)))
@@ -48,15 +43,8 @@ class HomeActivity : AppCompatActivity() {
         }
 
         viewModel.chiuitsLiveData.observe(this, Observer { chiuits ->
-//
-            val listAdapter = ChiuitRecyclerViewAdapter(chiuits,
-                fun(chiuit: Chiuit): Unit = shareChiuit(chiuit.description), fun(chiuit): Unit = deleteChiuit(chiuit))
-
-            rv_chiuit_list.apply {
-                setHasFixedSize(true)
-                adapter = listAdapter
-            }
-
+            // Instantiate an adapter with the received list and assign it to recycler view
+            rv_chiuit_list.adapter = ChiuitRecyclerViewAdapter(chiuits, this::shareChiuit, this::deleteChiuit)
         })
 
         viewModel.retrieveChiuits()
@@ -71,12 +59,12 @@ class HomeActivity : AppCompatActivity() {
     Defines text sharing/sending *implicit* intent, opens the application chooser menu
     and then starts a new activity which supports sharing/sending text.
      */
-    private fun shareChiuit(text: String) {
+    private fun shareChiuit(chiuit: Chiuit) {
         val sendIntent = Intent().apply {
 
             action = Intent.ACTION_SEND;
             type = "text/plain";
-            putExtra(Intent.EXTRA_TEXT, text);
+            putExtra(Intent.EXTRA_TEXT, chiuit.description);
 
         }
 
