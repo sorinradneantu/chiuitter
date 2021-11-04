@@ -1,6 +1,4 @@
-package ro.upt.ac.chiuitter.data
-
-import ro.upt.ac.chiuitter.domain.Chiuit
+package ro.upt.ac.chiuitter.domain
 
 interface ChiuitRepository {
     suspend fun getAll() : List<Chiuit>
