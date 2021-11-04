@@ -59,14 +59,16 @@ class FirebaseChiuitStore : ChiuitRepository {
                 val children = p0.children
 
 
-                TODO ("Iterate through the children and find the matching node, then perform removal.")
-                for (child in children) {
 
+                for (child in children) {
+                    if(child.child("timestamp").value?.equals(chiuit.timestamp) == true){
+                        database.child(chiuit.timestamp.toString()).removeValue()
+                    }
                 }
 
                 database.removeEventListener(this)
 
-                TODO ("Make sure the continuation is called")
+                continuation.resume(Unit)
             }
 
         })
