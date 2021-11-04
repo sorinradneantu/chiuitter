@@ -26,7 +26,12 @@ class FirebaseChiuitStore : ChiuitRepository {
 
                 val children = p0.children
 
-                TODO ("Iterate through the children and get the node value")
+                for(child in children){
+                    values.add(ChiuitNode(
+                        child.child("timestamp").value as Long,
+                        child.child("something").value as String
+                    ))
+                }
 
                 database.removeEventListener(this)
 
