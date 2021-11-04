@@ -42,9 +42,10 @@ class FirebaseChiuitStore : ChiuitRepository {
     }
 
     override suspend fun addChiuit(chiuit: Chiuit): Unit = suspendCoroutine { continuation ->
-        TODO ("Insert the object into database - don't forget to use the right model")
 
-        TODO ("Make sure the continuation is called")
+        database.child(chiuit.timestamp.toString()).setValue(chiuit.toFirebaseModel())
+
+        continuation.resume(Unit);
     }
 
     override suspend fun removeChiuit(chiuit: Chiuit) : Unit = suspendCoroutine { continuation ->
