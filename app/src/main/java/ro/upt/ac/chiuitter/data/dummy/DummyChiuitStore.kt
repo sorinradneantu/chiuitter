@@ -1,6 +1,6 @@
 package ro.upt.ac.chiuitter.data.dummy
 
-import ro.upt.ac.chiuitter.domain.ChiuitRepository
+import ro.upt.ac.chiuitter.data.ChiuitRepository
 import ro.upt.ac.chiuitter.domain.Chiuit
 
 class DummyChiuitStore : ChiuitRepository {

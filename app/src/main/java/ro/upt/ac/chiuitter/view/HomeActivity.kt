@@ -13,9 +13,7 @@ import kotlinx.android.synthetic.main.view_home.*
 
 import ro.upt.ac.chiuitter.R
 import ro.upt.ac.chiuitter.data.firebase.FirebaseChiuitStore
-import ro.upt.ac.chiuitter.data.database.ChiuitDbStore
-import ro.upt.ac.chiuitter.data.database.RoomDatabase
-import ro.upt.ac.chiuitter.data.dummy.DummyChiuitStore
+import ro.upt.ac.chiuitter.data.database.DbChiuitStore
 import ro.upt.ac.chiuitter.domain.Chiuit
 import ro.upt.ac.chiuitter.view.ComposeActivity.Companion.EXTRA_TEXT
 import ro.upt.ac.chiuitter.viewmodel.HomeViewModel
@@ -83,6 +81,10 @@ class HomeActivity : AppCompatActivity() {
         // We start a new activity that we expect to return the acquired text as the result.
 
         startActivityForResult(composeActivityIntent, COMPOSE_REQUEST_CODE)
+    }
+
+    private fun deleteChiuit(chiuit: Chiuit) {
+        viewModel.removeChiuit(chiuit)
     }
 
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
