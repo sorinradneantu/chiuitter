@@ -22,7 +22,7 @@ class HomeActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.view_home)
 
-        ibt_share.setOnClickListener { shareChiuit(txv_content.text.toString()) }
+        //ibt_share.setOnClickListener { shareChiuit(txv_content.text.toString()) }
         fab_add.setOnClickListener { composeChiuit() }
 
         initList();
@@ -98,6 +98,10 @@ class HomeActivity : AppCompatActivity() {
             }else{
                 txv_content.text = extractedText;
             }
+
+            // TODO("13. Instantiate a new chiuit object that add it to the adapter")
+            val new = extractedText?.let { it1 -> Chiuit(it1) }
+            new?.let { it1 -> listAdapter.addItem(it1) }
 
         }
     }

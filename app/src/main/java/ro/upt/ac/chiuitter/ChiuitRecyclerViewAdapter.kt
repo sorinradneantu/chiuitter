@@ -21,12 +21,7 @@ class ChiuitRecyclerViewAdapter(
 
     override fun getItemCount(): Int {
         TODO("9. Return the size of samples")
-
-        val itemCount : Int;
-        itemCount = chiuitList.size;
-
-        return itemCount;
-
+        return chiuitList.size
     }
 
     override fun onBindViewHolder(holder: ChiuitViewHolder, position: Int) {
@@ -39,6 +34,9 @@ class ChiuitRecyclerViewAdapter(
         TODO("12. Add the new item to the list then SMARTLY notify an addition")
 
         chiuitList.add(chiuit);
+        val tmp = chiuitList.size - 1
+        notifyItemInserted(tmp)
+
 
     }
 
