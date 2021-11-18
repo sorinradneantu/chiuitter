@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "597754791585",
+    "project_id": "chiuitter-5f367",
+    "storage_bucket": "chiuitter-5f367.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:597754791585:android:ab8a8fbd59db96520bd2e0",
+        "android_client_info": {
+          "package_name": "ro.upt.ac.chiuitter"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "597754791585-nsnq7lfeubopviq5k3maggvjj03qsllo.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBNzTe4ntdL08tDABsv3Tb2_6GU2V1elv4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "597754791585-nsnq7lfeubopviq5k3maggvjj03qsllo.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
