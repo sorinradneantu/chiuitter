@@ -29,7 +29,7 @@ class FirebaseChiuitStore : ChiuitRepository {
                 for(child in children){
                     values.add(ChiuitNode(
                         child.child("timestamp").value as Long,
-                        child.child("something").value as String
+                        child.child("description").value as String
                     ))
                 }
 
